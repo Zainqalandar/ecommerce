@@ -6,7 +6,7 @@ import { NavLink, Link } from 'react-router-dom'
 const navigation = {
     pages: [
         { name: 'Home', to: '/' },
-        { name: 'Stores', to: '/store' },
+        { name: 'Stores', to: '/store/product' },
         { name: 'Empty', to: '/ll' },
     ],
 }
@@ -17,7 +17,7 @@ export default function Header() {
     const [open, setOpen] = useState(false)
     useEffect(() => {
         const onScroll = () => {
-            if (window.scrollY > 400) {
+            if (window.scrollY > 100) {
                 setScrolled(true);
             } else {
                 setScrolled(false);

@@ -5,10 +5,13 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home/Home.jsx'
-import { Shop, SignIn } from './components/index.js'
+import {Detail, Shop, SignIn } from './components/index.js'
 import Store from './Pages/Store/Store.jsx'
 import { Provider } from 'react-redux'
 import store from './Store/Store.js'
+import Product from './Pages/Store/Product/Product.jsx'
+import BoySho0 from './Pages/Store/Boy-Shoes/BoySho0.jsx'
+import GirlSho0 from './Pages/Store/Boy-Shoes/GirlSho0.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,17 +22,36 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/store',
-        element: <Store />
+        path: 'store',
+        element: <Store />,
+        children:[
+          {
+            path: 'product',
+            element: <Product />,
+
+          },
+          {
+            path: 'detail/:slug',
+            element: <Detail />
+          },
+          {
+            path: "boysho",
+            element: <BoySho0 />
+          },
+          {
+            path: 'girlsho',
+            element: <GirlSho0 />
+          }
+        ]
       },
       {
-        path: '/shop',
+        path: 'shop',
         element: <Shop />
       }
     ]
   },
   {
-    path: '/signIn',
+    path: 'signIn',
     element: <SignIn />
   }
 ])
