@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../Store/DataSlice'
 
 const BoySho = ({cards}) => {
+ const dispatch = useDispatch()
   return (
     <div className='flex flex-wrap  justify-around'>
             {cards.map((card) => (
@@ -27,8 +30,8 @@ const BoySho = ({cards}) => {
                   </a>
                   <div className="mt-2 mb-5 flex items-center justify-between">
                     <p>
-                      <span className="text-3xl font-bold text-slate-900">{card.price}</span>
-                      <span className="text-sm text-slate-900 line-through">{card.price + 5}</span>
+                      <span className="text-3xl font-bold text-slate-900">{parseFloat(card.price).toFixed(2)}</span>
+                      <span className="text-sm text-slate-900 line-through">{parseFloat(card.price + 5).toFixed(2)}</span>
                     </p>
                     <div className="flex items-center">
                       <svg
@@ -81,9 +84,9 @@ const BoySho = ({cards}) => {
                       </span>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                  <button
+                    className=" w-full flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                    onClick={()=>dispatch(addToCart(card))}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +103,7 @@ const BoySho = ({cards}) => {
                       />
                     </svg>
                     Add to cart
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}

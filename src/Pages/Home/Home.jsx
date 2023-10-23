@@ -1,5 +1,5 @@
 import React from 'react'
-import { Banner, Data1 } from '../../components'
+import { Banner, Data1, Footer } from '../../components'
 import NewArrivals from '../../components/Body/NewArrivals'
 
 const Home = () => {
@@ -8,6 +8,7 @@ const Home = () => {
             <Banner />
             <Data1 />
             <NewArrivals />
+            <Footer />
         </div>
     )
 }

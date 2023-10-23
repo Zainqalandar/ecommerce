@@ -1,9 +1,9 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const Product = () => {
     return (
-        <section className="bg-white py-12 text-gray-700 sm:py-16 lg:py-10 ">
+        <section className=" bg-white py-12 text-gray-700 sm:py-16 lg:py-10 ">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-md text-center">
                     <h2 className="font-serif text-2xl font-bold sm:text-3xl">
@@ -15,6 +15,7 @@ const Product = () => {
                     </p>
                 </div>
                 <div className="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4">
+                    <Link to='/store/boysho'>
                     <article className="relative">
                         <div className="aspect-square overflow-hidden">
                             <img
@@ -32,7 +33,7 @@ const Product = () => {
                             <div className="">
                                 <h3 className="text-xs font-semibold sm:text-sm md:text-base">
                                     <a href="#" title="" className="cursor-pointer">
-                                        Arabian Musk
+                                        Boy's Shoes
                                         <span className="absolute" aria-hidden="true" />
                                     </a>
                                 </h3>
@@ -94,17 +95,10 @@ const Product = () => {
                                     </svg>
                                 </div>
                             </div>
-                            <div className="text-right">
-                                <del className="mt-px text-xs font-semibold text-gray-600 sm:text-sm">
-                                    {" "}
-                                    $79.00{" "}
-                                </del>
-                                <p className="text-xs font-normal sm:text-sm md:text-base">
-                                    $99.00
-                                </p>
-                            </div>
                         </div>
                     </article>
+                    </Link>
+                    <Link to='/store/girlsho'>
                     <article className="relative">
                         <div className="aspect-square overflow-hidden">
                             <img
@@ -117,7 +111,7 @@ const Product = () => {
                             <div className="">
                                 <h3 className="text-xs font-semibold sm:text-sm md:text-base">
                                     <a href="#" title="" className="cursor-pointer">
-                                        Albanian Essence
+                                        Girl's Shoes
                                         <span className="absolute" aria-hidden="true" />
                                     </a>
                                 </h3>
@@ -179,13 +173,9 @@ const Product = () => {
                                     </svg>
                                 </div>
                             </div>
-                            <div className="text-right">
-                                <p className="text-xs font-normal sm:text-sm md:text-base">
-                                    $299.00
-                                </p>
-                            </div>
                         </div>
                     </article>
+                    </Link>
                     <article className="relative">
                         <div className="aspect-square overflow-hidden">
                             <img

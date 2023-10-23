@@ -9,7 +9,8 @@ const Alldata = [
         "rating": {
             "rate": 4.4,
             "count": 150
-        }
+        },
+        quantity: 1
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@ const Alldata = [
         "rating": {
             "rate": 4.8,
             "count": 200
-        }
+        },
+        quantity: 1
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@ const Alldata = [
         "rating": {
             "rate": 4.2,
             "count": 180
-        }
+        },
+        quantity: 1
     },
     {
         "id": 4,
@@ -45,7 +48,8 @@ const Alldata = [
         "rating": {
             "rate": 4.6,
             "count": 250
-        }
+        },
+        quantity: 1
     },
     {
         "id": 5,
@@ -57,7 +61,8 @@ const Alldata = [
         "rating": {
             "rate": 4.3,
             "count": 160
-        }
+        },
+        quantity: 1
     },
     {
         "id": 6,
@@ -69,7 +74,8 @@ const Alldata = [
         "rating": {
             "rate": 4.5,
             "count": 190
-        }
+        },
+        quantity: 1
     },
     {
         "id": 7,
@@ -81,7 +87,8 @@ const Alldata = [
         "rating": {
             "rate": 4.7,
             "count": 220
-        }
+        },
+        quantity: 1
     },
     {
         "id": 8,
@@ -93,7 +100,8 @@ const Alldata = [
         "rating": {
             "rate": 4.4,
             "count": 210
-        }
+        },
+        quantity: 1
     },
     {
         "id": 9,
@@ -105,7 +113,8 @@ const Alldata = [
         "rating": {
             "rate": 4.0,
             "count": 170
-        }
+        },
+        quantity: 1
     },
     {
         "id": 10,
@@ -117,7 +126,8 @@ const Alldata = [
         "rating": {
             "rate": 4.2,
             "count": 180
-        }
+        },
+        quantity: 1
     },
     {
         "id": 11,
@@ -129,7 +139,8 @@ const Alldata = [
         "rating": {
             "rate": 4.3,
             "count": 160
-        }
+        },
+        quantity: 1
     },
     {
         "id": 12,
@@ -141,7 +152,8 @@ const Alldata = [
         "rating": {
             "rate": 4.6,
             "count": 250
-        }
+        },
+        quantity: 1
     },
     {
         "id": 13,
@@ -153,7 +165,8 @@ const Alldata = [
         "rating": {
             "rate": 4.1,
             "count": 200
-        }
+        },
+        quantity: 1
     },
     {
         "id": 14,
@@ -165,7 +178,8 @@ const Alldata = [
         "rating": {
             "rate": 4.2,
             "count": 190
-        }
+        },
+        quantity: 1
     },
     {
         "id": 15,
@@ -177,7 +191,8 @@ const Alldata = [
         "rating": {
             "rate": 4.8,
             "count": 220
-        }
+        },
+        quantity: 1
     },
     {
         "id": 16,
@@ -189,7 +204,8 @@ const Alldata = [
         "rating": {
             "rate": 4.5,
             "count": 210
-        }
+        },
+        quantity: 1
     },
     {
         "id": 17,
@@ -201,7 +217,8 @@ const Alldata = [
         "rating": {
             "rate": 4.5,
             "count": 210
-        }
+        },
+        quantity: 1
     },
     {
         "id": 18,
@@ -213,7 +230,8 @@ const Alldata = [
         "rating": {
           "rate": 4.6,
           "count": 180
-        }
+        },
+        quantity: 1
       },
       {
         "id": 19,
@@ -225,7 +243,8 @@ const Alldata = [
         "rating": {
           "rate": 4.7,
           "count": 220
-        }
+        },
+        quantity: 1
       },
       {
         "id": 20,
@@ -237,7 +256,8 @@ const Alldata = [
         "rating": {
           "rate": 4.5,
           "count": 190
-        }
+        },
+        quantity: 1
       },
       {
         "id": 21,
@@ -249,7 +269,8 @@ const Alldata = [
         "rating": {
           "rate": 4.8,
           "count": 210
-        }
+        },
+        quantity: 1
       },
       {
         "id": 22,
@@ -261,7 +282,8 @@ const Alldata = [
         "rating": {
           "rate": 4.4,
           "count": 170
-        }
+        },
+        quantity: 1
       },
       {
         "id": 23,
@@ -273,7 +295,8 @@ const Alldata = [
         "rating": {
           "rate": 4.6,
           "count": 190
-        }
+        },
+        quantity: 1
       },
       {
         "id": 24,
@@ -285,7 +308,8 @@ const Alldata = [
         "rating": {
           "rate": 4.5,
           "count": 200
-        }
+        },
+        quantity: 1
       },
       {
         "id": 25,
@@ -297,7 +321,8 @@ const Alldata = [
         "rating": {
           "rate": 4.7,
           "count": 220
-        }
+        },
+        quantity: 1
       },
       {
         "id": 26,
@@ -309,7 +334,8 @@ const Alldata = [
         "rating": {
           "rate": 4.2,
           "count": 180
-        }
+        },
+        quantity: 1
       },
       {
         "id": 27,
@@ -321,7 +347,8 @@ const Alldata = [
         "rating": {
           "rate": 4.3,
           "count": 200
-        }
+        },
+        quantity: 1
       },
       {
         "id": 28,
@@ -333,7 +360,8 @@ const Alldata = [
         "rating": {
           "rate": 4.8,
           "count": 240
-        }
+        },
+        quantity: 1
       },
       {
         "id": 29,
@@ -345,7 +373,8 @@ const Alldata = [
         "rating": {
           "rate": 4.5,
           "count": 190
-        }
+        },
+        quantity: 1
       },
       {
         "id": 30,
@@ -357,7 +386,8 @@ const Alldata = [
         "rating": {
           "rate": 4.6,
           "count": 210
-        }
+        },
+        quantity: 1
       },
 ]
 

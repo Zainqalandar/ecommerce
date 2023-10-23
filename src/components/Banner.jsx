@@ -2,7 +2,6 @@ import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import { bannerImgOne, bannerImgTwo, bannerImgThree } from '../assets/banner';
 import { Link } from 'react-router-dom';
 
@@ -21,17 +20,17 @@ const Banner = () => {
             <Slider {...settings}>
                 <div>
                     <Link to='/'>
-                        <img src={bannerImgOne} />
+                        <img src={bannerImgOne} alt='helo' />
                     </Link>
                 </div>
                 <div>
                     <Link to='/'>
-                        <img src={bannerImgTwo} />
+                        <img src={bannerImgTwo} alt='helo' />
                     </Link>
                 </div>
                 <div>
                     <Link to='/'>
-                        <img src={bannerImgThree} />
+                        <img src={bannerImgThree} alt='helo' />
                     </Link>
                 </div>
             </Slider>
