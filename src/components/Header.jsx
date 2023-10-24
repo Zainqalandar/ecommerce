@@ -8,7 +8,7 @@ const navigation = {
   pages: [
     { name: 'Home', to: '/' },
     { name: 'Stores', to: '/store/product' },
-    { name: 'Empty', to: '/ll' },
+    { name: 'Empty', to: 'fsdklf' },
   ],
 }
 
@@ -109,7 +109,7 @@ export default function Header() {
         </Dialog>
       </Transition.Root>
 
-      <header className={` bg-white  ${scrolled && "fixed w-full top-0"}`}>
+      <header className={` bg-white  ${scrolled && "fixed w-full top-0 z-10"}`}>
         {!(scrolled) && <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Get free delivery on orders over $100
         </p>}

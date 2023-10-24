@@ -22,7 +22,7 @@ const DataSlice = createSlice({
         getCartTotle: (state) => {
             const { totalPrice, totalQuantity } = state.Items.reduce(
                 (ItemTotle, element) => {
-                    const { price, quantity} = element
+                    const { price, quantity } = element
                     const pricefull = quantity * price
                     ItemTotle.totalPrice += pricefull
                     ItemTotle.totalQuantity += quantity
@@ -53,7 +53,7 @@ const DataSlice = createSlice({
                 }
                 return cart
             })
-        },
+        }
 
     }
 

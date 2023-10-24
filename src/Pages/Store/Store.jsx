@@ -6,19 +6,21 @@ import { useNavigate } from 'react-router-dom'
 const Store = () => {
   const [hidden, setHidden] = useState(true)
   const [ehidden, setEhidden] = useState(true)
-  const navigate =useNavigate()
+  const [phidden, setPhidden] = useState(true)
+  const [chk, setChk] = useState(false)
+  const navigate = useNavigate()
   // In your React component
-useEffect(() => {
-  document.body.style.overflow = 'hidden';
-  return () => {
-    document.body.style.overflow = 'auto';
-  };
-}, []);
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   return (
     <>
-    <button  class="material-symbols-outlined relative left-[280px] bg-slate-200 m-1" onClick={() => navigate(-1)}>west</button>
-    <button  class="material-symbols-outlined relative left-[1270px]  bg-slate-200 m-1" onClick={() => navigate(+1)}>east</button>
+      <button class="material-symbols-outlined relative left-[280px] bg-slate-200 m-1" onClick={() => navigate(-1)}>west</button>
+      <button class="material-symbols-outlined relative left-[1270px]  bg-slate-200 m-1" onClick={() => navigate(+1)}>east</button>
       <button
         data-drawer-target="sidebar-multi-level-sidebar"
         data-drawer-toggle="sidebar-multi-level-sidebar"
@@ -49,10 +51,10 @@ useEffect(() => {
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
-             <li>
+            <li>
               <NavLink
                 to="/store/product"
-                className={({isActive})=>`${isActive && "bg-gray-200 "} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group`}
+                className={({ isActive }) => `${isActive && "bg-gray-200 "} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group`}
               >
                 <svg
                   className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -122,7 +124,7 @@ useEffect(() => {
                 <li>
                   <NavLink
                     to="/store/boysho"
-                    className={({isActive})=> `${isActive && 'bg-slate-200'} flex ${isActive && setHidden(false)} items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700`}
+                    className={({ isActive }) => `${isActive && 'bg-slate-200'} flex ${isActive && setHidden(false)} items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700`}
                   >
                     Boys Shoes
                   </NavLink>
@@ -130,40 +132,66 @@ useEffect(() => {
                 <li>
                   <NavLink
                     to="/store/girlsho"
-                    className={({isActive})=>`${isActive && 'bg-slate-200'} flex items-center ${isActive && setHidden(false)} w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700`}
+                    className={({ isActive }) => `${isActive && 'bg-slate-200'} flex items-center ${isActive && setHidden(false)} w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700`}
                   >
                     Girls Sheos
                   </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  <NavLink
+                    to="/store/girlshirt"
+                    className={({ isActive }) => `${isActive && 'bg-slate-200'} flex items-center ${isActive && setHidden(false)} w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700`}
                   >
-                    Invoice
-                  </a>
+                    Girl's shirt
+                  </NavLink>
                 </li>
               </ul>
             </li>
             <li>
-              <a
-                href="#"
+              <button
+                onClick={() => setPhidden(!(phidden))}
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 18"
-                >
-                  <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
-                </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap">Kanban</span>
-                <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                  Pro
+                <span class="material-symbols-outlined font-bold text-gray-500">
+                  currency_yen
                 </span>
-              </a>
+                <div className=' flex justify-between  w-48'>
+                  <div>
+                    <span className="flex-1 ml-3 whitespace-nowrap">Shop by Price</span>
+                  </div>
+                  <div >
+                    <svg
+                      className="w-3 h-3"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="m1 1 4 4 4-4"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <ul id="dropdown-example" className={`${phidden && "hidden"} py-2 space-y-2`}>
+                <li >
+                  <input type="checkbox" name="" id="" />
+                  <b className=' mx-2 text-gray-500'>$0.00 - $49.99</b>
+                </li>
+                <li >
+                  <input type="checkbox" name="" id="" />
+                  <b className=' mx-2 text-gray-500'>$50.00 - $99.99</b>
+                </li>
+                <li >
+                  <input type="checkbox" name="" id="" />
+                  <b className=' mx-2 text-gray-500'> $100.00 - $199.99 </b>
+                </li>
+              </ul>
             </li>
             <li>
               <a
@@ -246,7 +274,7 @@ useEffect(() => {
             </li>
           </ul>
         </div>
-      </aside>
+      </aside >
 
 
       <div id='Store' className=" p-2 sm:ml-64 border border-black">

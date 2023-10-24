@@ -6,9 +6,10 @@ import { addToCart } from '../../Store/DataSlice'
 
 const Detail = () => {
     const { slug } = useParams()
+    let string = slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
     const cardd = useSelector(state => state.store.Storecards)
-    const value = cardd.filter(card => card.id === Number(slug))
-   const dispatch = useDispatch()
+    const value = cardd.filter(card => card.title === string)
+    const dispatch = useDispatch()
     return (
         <>
             <div className="bg-gray-100 dark:bg-gray-800 py-8">

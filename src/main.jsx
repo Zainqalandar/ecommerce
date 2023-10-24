@@ -5,13 +5,14 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home/Home.jsx'
-import {Detail, Shop, SignIn } from './components/index.js'
+import {Detail, Shop, SignIn, User } from './components/index.js'
 import Store from './Pages/Store/Store.jsx'
 import { Provider } from 'react-redux'
 import store from './Store/Store.js'
 import Product from './Pages/Store/Product/Product.jsx'
 import BoySho0 from './Pages/Store/Boy-Shoes/BoySho0.jsx'
 import GirlSho0 from './Pages/Store/Boy-Shoes/GirlSho0.jsx'
+import GirlShirt from './Pages/Store/Boy-Shoes/GirlShirt.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
           {
             path: 'girlsho',
             element: <GirlSho0 />
+          },
+          {
+            path: 'girlshirt',
+            element: <GirlShirt />
           }
         ]
       },
@@ -53,6 +58,11 @@ const router = createBrowserRouter([
   {
     path: 'signIn',
     element: <SignIn />
+  },
+  {
+    path: ':userid',
+    element: <User />
+
   }
 ])
 

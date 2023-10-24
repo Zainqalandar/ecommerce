@@ -11,7 +11,7 @@ const BoySho = ({cards}) => {
               <div key={card.id} className="relative m-1 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
                 <Link
                   className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
-                  to={`/store/detail/${card.id}`}
+                  to={`/store/detail/${card.title.toLowerCase().replace(/ /g, "-")}`}
                 >
                   <img
                     className="object-cover"

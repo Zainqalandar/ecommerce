@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux'
 
 const BoySho0 = () => {
   const cards = useSelector(state => state.store.Storecards)
+  const fltrcard = cards.filter((cards) => cards.category === "men's shoes")
   return (
     <>
-      <Cards cards={cards.slice(0,17)} />
+      <Cards cards={fltrcard} />
     </>
   )
 }

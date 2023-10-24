@@ -7,5 +7,8 @@ import BoySho from "./Cards/Shoes";
 import Detail from "./Product-Detail/Detail";
 import Banner from './Banner'
 import Footer from "./Footer/Footer";
+import Search from "./Searchbar/Search";
+import Bestsellers from "./Body/Bestsellers";
+import User from "./User";
 
-export {Footer, Banner, SignIn, Data1, Sidebar, Cards, Shop, BoySho, Detail}
+export {Footer,User, Banner, SignIn, Data1, Sidebar, Cards, Shop, BoySho, Detail, Search, Bestsellers}
