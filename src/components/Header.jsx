@@ -17,20 +17,20 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const cart = useSelector(state => state.store.Items)
-    useEffect(() => {
-        const onScroll = () => {
-          setScrolled(true);
-            if (window.scrollY > 200) {
-            } else {
-                setScrolled(false);
-            }
-        }
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, [])
-    
-    return (
-      <div className="bg-white">
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(true);
+      if (window.scrollY > 200) {
+      } else {
+        setScrolled(false);
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [])
+
+  return (
+    <div className="bg-white">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -86,9 +86,9 @@ export default function Header() {
                     </Link>
                   </div>
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                    <Link to="/signup" className="-m-2 block p-2 font-medium text-gray-900">
                       Create account
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -146,8 +146,8 @@ export default function Header() {
                     <NavLink
                       key={page.name}
                       to={page.to}
-                      className={({isActive})=>
-                        `flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 ${isActive? 'border-indigo-600 text-indigo-600': "border-transparent text-gray-900"}`}
+                      className={({ isActive }) =>
+                        `flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 ${isActive ? 'border-indigo-600 text-indigo-600' : "border-transparent text-gray-900"}`}
                     >
                       {page.name}
                     </NavLink>
@@ -178,14 +178,6 @@ export default function Header() {
                   </a>
                 </div>
 
-                {/* Search */}
-                <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
-                    <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
-                  </a>
-                </div>
-
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <Link to="/adToCart" className="group -m-2 flex items-center p-2">
@@ -197,6 +189,16 @@ export default function Header() {
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
                 </div>
+                {/* Person */}
+
+                <div className="flex lg:ml-6">
+                  <Link to="/person" className="p-2 text-gray-400 hover:text-gray-500">
+                    <span className="material-symbols-outlined">
+                      account_circle
+                    </span>
+                  </Link>
+                </div>
+
               </div>
             </div>
           </div>

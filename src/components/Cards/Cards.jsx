@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Slider from 'react-slick'
 import BoySho from './Shoes'
+import Mycustom from '../../Context/Usercontext'
 
-const Cards = ({cards}) => {
-  
-  // console.log(cards)
+const Cards = ({ cards }) => {
+
+  const { data } = Mycustom()
+  const fltrcard = cards.filter(card => card.price <= data)
   const settings = {
     className: 'flex',
     dots: true,
-    // fade: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -17,9 +18,9 @@ const Cards = ({cards}) => {
       <div
         style={{
           borderRadius: "10px",
-          padding: "5px",
+          padding: "2px",
           width: '50%',
-          background: 'blue',
+          background: 'white',
           color: 'black',
           position: 'fixed',
           bottom: '0px',
@@ -32,13 +33,7 @@ const Cards = ({cards}) => {
     ),
     customPaging: i => (
       <div
-        style={{
-          width: "30px",
-          color: "blue",
-          border: "1px red solid",
-          color: 'black',
-          fontStyle: 'black'
-        }}
+        className=' hover:bg-black text-black hover:text-white w-[30px] border border-black'
       >
         {i + 1}
       </div>
@@ -49,13 +44,13 @@ const Cards = ({cards}) => {
     <div className=' overflow-y-auto h-[500px]'>
       <Slider {...settings} className=''>
         <div>
-          <BoySho cards={cards.slice(0, 6)} />
+          <BoySho cards={fltrcard.slice(0, 6)} />
         </div>
         <div>
-          <BoySho cards={cards.slice(7, 13)} />
+          <BoySho cards={fltrcard.slice(7, 13)} />
         </div>
         <div>
-          <BoySho cards={cards.slice(14, 17)} />
+          <BoySho cards={fltrcard.slice(14, 17)} />
         </div>
       </Slider>
     </div>

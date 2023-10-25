@@ -5,7 +5,7 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home/Home.jsx'
-import {Detail, Shop, SignIn, User } from './components/index.js'
+import { Detail, Person, Shop, SignIn, Signup, User } from './components/index.js'
 import Store from './Pages/Store/Store.jsx'
 import { Provider } from 'react-redux'
 import store from './Store/Store.js'
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: 'store',
         element: <Store />,
-        children:[
+        children: [
           {
             path: 'product',
             element: <Product />,
@@ -52,7 +52,11 @@ const router = createBrowserRouter([
       {
         path: '/adToCart',
         element: <Shop />
-      }
+      },
+      {
+        path: 'person',
+        element: <Person />
+      },
     ]
   },
   {
@@ -60,9 +64,13 @@ const router = createBrowserRouter([
     element: <SignIn />
   },
   {
+    path: 'signup',
+    element: <Signup />
+
+  },
+  {
     path: ':userid',
     element: <User />
-
   }
 ])
 

@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Cards } from '../../components'
 import { Link, Outlet, NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Mycustom from '../../Context/Usercontext'
 
 const Store = () => {
   const [hidden, setHidden] = useState(true)
   const [ehidden, setEhidden] = useState(true)
   const [phidden, setPhidden] = useState(true)
-  const [chk, setChk] = useState(false)
+  const [number, setNumber] = useState(100)
+  const { setData, data } = Mycustom()
   const navigate = useNavigate()
   // In your React component
   useEffect(() => {
@@ -16,11 +18,16 @@ const Store = () => {
       document.body.style.overflow = 'auto';
     };
   }, []);
+   const Myref = useRef()
+   useEffect(() => {
+    Myref.current.focus()
+   }, [phidden])
+   
 
   return (
     <>
-      <button class="material-symbols-outlined relative left-[280px] bg-slate-200 m-1" onClick={() => navigate(-1)}>west</button>
-      <button class="material-symbols-outlined relative left-[1270px]  bg-slate-200 m-1" onClick={() => navigate(+1)}>east</button>
+      <button className="material-symbols-outlined relative left-[280px] bg-slate-200 m-1" onClick={() => navigate(-1)}>west</button>
+      <button className="material-symbols-outlined relative left-[1270px]  bg-slate-200 m-1" onClick={() => navigate(+1)}>east</button>
       <button
         data-drawer-target="sidebar-multi-level-sidebar"
         data-drawer-toggle="sidebar-multi-level-sidebar"
@@ -152,7 +159,7 @@ const Store = () => {
                 onClick={() => setPhidden(!(phidden))}
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                <span class="material-symbols-outlined font-bold text-gray-500">
+                <span className="material-symbols-outlined font-bold text-gray-500">
                   currency_yen
                 </span>
                 <div className=' flex justify-between  w-48'>
@@ -179,17 +186,17 @@ const Store = () => {
                 </div>
               </button>
               <ul id="dropdown-example" className={`${phidden && "hidden"} py-2 space-y-2`}>
-                <li >
-                  <input type="checkbox" name="" id="" />
-                  <b className=' mx-2 text-gray-500'>$0.00 - $49.99</b>
-                </li>
-                <li >
-                  <input type="checkbox" name="" id="" />
-                  <b className=' mx-2 text-gray-500'>$50.00 - $99.99</b>
-                </li>
-                <li >
-                  <input type="checkbox" name="" id="" />
-                  <b className=' mx-2 text-gray-500'> $100.00 - $199.99 </b>
+                <li>
+                  <label
+                    htmlFor=""
+                  >$</label>
+                  <input
+                    type="number"
+                    className=' boder border-black'
+                    value={data}
+                    ref={Myref}
+                    onChange={(e) => setData(parseInt(e.target.value, 10))}
+                  />
                 </li>
               </ul>
             </li>
@@ -231,8 +238,8 @@ const Store = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/signIn"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -251,11 +258,11 @@ const Store = () => {
                   />
                 </svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/signup"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -270,7 +277,7 @@ const Store = () => {
                   <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z" />
                 </svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

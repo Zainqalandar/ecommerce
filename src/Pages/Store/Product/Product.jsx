@@ -32,10 +32,10 @@ const Product = () => {
                             <div className="mt-4 flex items-start justify-between">
                                 <div className="">
                                     <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                                        <a href="#" title="" className="cursor-pointer">
+                                        {/* <a href="#" title="" className="cursor-pointer">
                                             Boy's Shoes
                                             <span className="absolute" aria-hidden="true" />
-                                        </a>
+                                        </a> */}
                                     </h3>
                                 </div>
                             </div>
@@ -61,10 +61,10 @@ const Product = () => {
                             <div className="mt-4 flex items-start justify-between">
                                 <div className="">
                                     <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                                        <a href="#" title="" className="cursor-pointer">
+                                        {/* <a href="#" title="" className="cursor-pointer">
                                             Girl's Shoes
                                             <span className="absolute" aria-hidden="true" />
-                                        </a>
+                                        </a> */}
                                     </h3>
                                 </div>
                             </div>
@@ -90,10 +90,10 @@ const Product = () => {
                         <div className="mt-4 flex items-start justify-between">
                             <div className="">
                                 <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                                    <a href="#" title="" className="cursor-pointer">
+                                    {/* <a href="#" title="" className="cursor-pointer">
                                         Siberian Perfum
                                         <span className="absolute" aria-hidden="true" />
-                                    </a>
+                                    </a> */}
                                 </h3>
                             </div>
                         </div>
@@ -118,10 +118,10 @@ const Product = () => {
                         <div className="mt-4 flex items-start justify-between">
                             <div className="">
                                 <h3 className="text-xs font-semibold sm:text-sm md:text-base">
-                                    <a href="#" title="" className="cursor-pointer">
+                                    {/* <a href="#" title="" className="cursor-pointer">
                                         Danish Levoune
                                         <span className="absolute" aria-hidden="true" />
-                                    </a>
+                                    </a> */}
                                 </h3>
                             </div>
                         </div>
